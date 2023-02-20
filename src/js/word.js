@@ -1,10 +1,10 @@
 export default function Word(){
     const wordsList = [
-        { word: "Vegetable", hint: "Leafy green food" },
-        { word: "Fruit", hint: "Sweet juicy growth" },
-        { word: "Animal", hint: "Moving organism" },
-        { word: "Bird", hint: "Winged feathery animal" },
-        { word: "Tree", hint: "Tall perennial plant" },
+        { word: "vegetable", hint: "Leafy green food" },
+        { word: "fruit", hint: "Sweet juicy growth" },
+        { word: "animal", hint: "Moving organism" },
+        { word: "bird", hint: "Winged feathery animal" },
+        { word: "tree", hint: "Tall perennial plant" },
       ];
 
       return wordsList;

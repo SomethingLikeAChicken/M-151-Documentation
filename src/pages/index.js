@@ -16,30 +16,42 @@ export default function Home() {
   let typingInput;
 
   useEffect(() => {
-    console.log(wordToGuess);
-  }, [wordToGuess]);
-
- useEffect(() => {
-  randomWord();
-  typingInput = document.querySelector(".typing-input");
-
-  function initGame(e) {
-    let key = e.target.value;
-    if (key.match(/^[A-Za-z]+$/)) {
-      console.log(wordToGuess);
-      console.log(key);
-      if (wordToGuess.includes(key)) {
-        console.log("letter found!");
-      } else {
-        console.log("wrong letter!");
+    randomWord();
+    const typingInput = document.querySelector(".typing-input");
+    
+    const guessedLetters = new Set();
+  
+    function initGame(e) {
+      
+      const key = e.target.value.toLowerCase();
+      if (/^[a-z]$/.test(key)) {
+        console.log(key);
+        if (wordToGuess.includes(key)) {
+          for (let i = 0; i < words.length; i++) {
+            if(words[i] === key){
+              inputs.querySelectorAll("input")[i].value = key;
+            }
+              
+            
+          }
+          guessedLetters.add(key);
+          typingInput.value = "";
+          if (guessedLetters.size === new Set(wordToGuess.split("")).size) {
+            console.log("you win!");
+          }
+        } else {
+          console.log("wrong letter!");
+          heart--;
+          if (heart === 0) {
+            console.log("game over!");
+          }
+        }
       }
     }
-  }
-
-  document.addEventListener("keydown", () => typingInput.focus());
-  document.addEventListener("input", initGame);
-
-}, []);
+  
+    typingInput.addEventListener("input", initGame);
+    return () => typingInput.removeEventListener("input", initGame);
+  }, [wordToGuess]);
 
   function randomWord() {
     const ranObj = Math.floor(Math.random() * words.length);
@@ -47,7 +59,6 @@ export default function Home() {
     setHint(words[ranObj].hint);
     console.log(wordToGuess);
   }
-
   return (
     <>
       <Head>
