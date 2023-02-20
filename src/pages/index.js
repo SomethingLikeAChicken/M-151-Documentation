@@ -5,34 +5,32 @@ import Word from "./../js/word";
 import { useState, useEffect, useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
-const wrongLetters = ["a", "b", "c"];
 const inputWord = "";
-let heart = 3;
 const words = Word();
 
 export default function Home() {
   const [wordToGuess, setWordToGuess] = useState("");
   const [hint, setHint] = useState("");
+  const [heart, setHeart] = useState(3);
+  const [wrongLetters, setWrongLetters] = useState([]);
+  const inputsRef = useRef(null);
   let typingInput;
 
   useEffect(() => {
     randomWord();
     const typingInput = document.querySelector(".typing-input");
-    
+
     const guessedLetters = new Set();
-  
+
     function initGame(e) {
-      
       const key = e.target.value.toLowerCase();
       if (/^[a-z]$/.test(key)) {
         console.log(key);
         if (wordToGuess.includes(key)) {
-          for (let i = 0; i < words.length; i++) {
-            if(words[i] === key){
-              inputs.querySelectorAll("input")[i].value = key;
+          for (let i = 0; i < wordToGuess.length; i++) {
+            if (wordToGuess[i] === key) {
+              inputsRef.current.querySelectorAll("input")[i].value = key;
             }
-              
-            
           }
           guessedLetters.add(key);
           typingInput.value = "";
@@ -41,17 +39,21 @@ export default function Home() {
           }
         } else {
           console.log("wrong letter!");
-          heart--;
-          if (heart === 0) {
-            console.log("game over!");
-          }
+          setHeart((prevHeart) => prevHeart - 1);
+          setWrongLetters((prevWrongLetters) => [...prevWrongLetters, key]);
         }
       }
     }
-  
+
     typingInput.addEventListener("input", initGame);
     return () => typingInput.removeEventListener("input", initGame);
   }, [wordToGuess]);
+
+  useEffect(() => {
+    if (heart === 0) {
+      console.log("game over!");
+    }
+  }, [heart]);
 
   function randomWord() {
     const ranObj = Math.floor(Math.random() * words.length);
@@ -76,8 +78,8 @@ export default function Home() {
           <h1 className="font-thin"> Guess the Word</h1>
           <div className="content">
             <input type="text" class="typing-input" maxlength="1"></input>
-            
-            <div className="inputs">
+
+            <div className="inputs" ref={inputsRef}>
               {wordToGuess &&
                 wordToGuess
                   .split("")
@@ -90,7 +92,9 @@ export default function Home() {
                 Hint: <span>{hint}</span>
               </p>
               <p className="guesses-left">Remaining Guesses: {heart}</p>
-              <p className="wrong-letters">Wrong letters: {wrongLetters}</p>
+              <p className="wrong-letters">
+                Wrong letters: {wrongLetters.join(", ")}
+              </p>
             </div>
             <button className="reset-btn" onClick={randomWord}>
               Reset Game
