@@ -15,3 +15,8 @@ model User {
   password String
   name  String?
 }
+model Words {
+  id Int @id @default(autoincrement())
+  word String
+  hint String?
+}

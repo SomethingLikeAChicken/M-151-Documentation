@@ -5,23 +5,30 @@ import Word from "./../js/word";
 import { useState, useEffect, useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// Initializing variables for the word input and the list of words
 const inputWord = "";
-const words = Word();
 
 export default function Home() {
+  // Defining state variables using the useState hook
   const [wordToGuess, setWordToGuess] = useState("");
   const [hint, setHint] = useState("");
   const [heart, setHeart] = useState(3);
   const [wrongLetters, setWrongLetters] = useState([]);
+  const [prevWord, setPrevWord] = useState("");
+  const [words, setWords] = useState([]);
+
+  // Creating a reference to the inputs div
   const inputsRef = useRef(null);
   let typingInput;
 
+  // Effect that listens for changes to the wordToGuess state variable
   useEffect(() => {
-    randomWord();
     const typingInput = document.querySelector(".typing-input");
 
     const guessedLetters = new Set();
 
+    //Checking if Input is in WordToGuess
     function initGame(e) {
       const key = e.target.value.toLowerCase();
       if (/^[a-z]$/.test(key)) {
@@ -38,6 +45,7 @@ export default function Home() {
             console.log("you win!");
           }
         } else {
+          typingInput.value = "";
           console.log("wrong letter!");
           setHeart((prevHeart) => prevHeart - 1);
           setWrongLetters((prevWrongLetters) => [...prevWrongLetters, key]);
@@ -49,17 +57,32 @@ export default function Home() {
     return () => typingInput.removeEventListener("input", initGame);
   }, [wordToGuess]);
 
+  // Effect that listens for changes to the heart state variable
   useEffect(() => {
     if (heart === 0) {
       console.log("game over!");
     }
   }, [heart]);
-
+useEffect(() => {
+  async function fetchWords(){
+    const res = await fetch("/api/hello");
+      const wordsData = await res.json();
+      setWords(wordsData);
+  }
+  fetchWords();
+})
+  
+  // RandomWord function, that checks if a word comes twice in a row
   function randomWord() {
-    const ranObj = Math.floor(Math.random() * words.length);
-    setWordToGuess(words[ranObj].word);
-    setHint(words[ranObj].hint);
-    console.log(wordToGuess);
+    setHeart(3);
+    let newWord;
+    do {
+      newWord = words[Math.floor(Math.random() * words.length)];
+    } while (newWord.word === prevWord);
+
+    setWordToGuess(newWord.word);
+    setHint(newWord.hint);
+    setPrevWord(newWord.word);
   }
   return (
     <>
@@ -77,14 +100,17 @@ export default function Home() {
         <div className="wrapper">
           <h1 className="font-thin"> Guess the Word</h1>
           <div className="content">
-            <input type="text" class="typing-input" maxlength="1"></input>
-
+            <input type="text" className="typing-input" maxLength="1"></input>
             <div className="inputs" ref={inputsRef}>
               {wordToGuess &&
                 wordToGuess
                   .split("")
                   .map((letter, index) => (
-                    <input key={index} type="text" disabled />
+                    <input
+                      key={`${wordToGuess}-${index}`}
+                      type="text"
+                      disabled
+                    />
                   ))}
             </div>
             <div className="details">
@@ -97,7 +123,7 @@ export default function Home() {
               </p>
             </div>
             <button className="reset-btn" onClick={randomWord}>
-              Reset Game
+              New Game?
             </button>
           </div>
         </div>

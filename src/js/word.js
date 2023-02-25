@@ -6,6 +6,5 @@ export default function Word(){
         { word: "bird", hint: "Winged feathery animal" },
         { word: "tree", hint: "Tall perennial plant" },
       ];
-
       return wordsList;
 }
