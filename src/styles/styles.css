@@ -3,13 +3,23 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: black; /*Remove at end*/
+    color: black;
 }
 body{
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.link{
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
 }
 .wrapper{
     width: 450px;
@@ -71,4 +81,8 @@ body{
     background: #b5b5b5;
     border-radius: 5px;
     margin-bottom: 30px;
+}
+.scores{
+    color: #FFF;
+    background-color: #FFF;
 }
