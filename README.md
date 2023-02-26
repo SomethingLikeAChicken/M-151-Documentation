@@ -4,47 +4,58 @@ Holzherr Janic
 
 | Datum | Version | Zusammenfassung                                              |
 | ----- | ------- | ------------------------------------------------------------ |
-|       | 0.0.1   |                                                              |
-|       | 0.0.2   |                                                              |
-|       | 0.0.3   |                                                              |
-|       | 0.0.4   |                                                              |
-|       | 0.0.5   |                                                              |
-|       | 0.0.6   |                                                              |
-|       | 1.0.0   |                                                              |
+| 6.02.2023 | 0.0.1   | Gameprinzip + Logik implementiert. |
+| 13.02.2023 | 0.0.2 | Datenbank (SQLite) eingebunden mit Prisma |
+| 13.02.2023 | 0.0.3   | Login mit Nextauth versucht einzurichten (nicht funktioniert) |
+| 20.02.2023 | 0.0.4   | Backend für das Spiel entwickelt und eingebunden |
+| 26.02.2023 | 0.0.5   | Highscoreliste implementiert, ranglistensystem entwickelt | 
+| 26.02.2023 | 0.0.6   | Login nocheinmal versucht zu implementieren (gleicher fehler wie beim letzten versuch) |
+| 27.02.2023 | 1.0.0   | Bugs behoben |
 
 # 0 Ihr Projekt
 
-Casino Spiel
+In meinem Projekt habe ich mit Next.js das Gameprinzip der Fernsehsendung "Glücksrad" implementiert. Dies dient als LB für das Modul 151
 
 # 1 Analyse
 
-* Tier 1 (Presentation): Glückspiel anzeigen
+* Tier 1 (Presentation): Wörterrate Spiel und Glücksrad anzeigen
 * Tier 2 (Webserver): Eingaben validieren
-* Tier 3 (Application Server): Glückspiel berechnen
-* Tier 4 (Dataserver): Benutezrdaten speichern
+* Tier 3 (Application Server): Glücksspiel ausgaben generieren
+* Tier 4 (Dataserver): Ranglistensystem, Highscoreliste und Namen speichern
 
 # 2 Technologie
 
-* Tier 1 (Presentation): Next.js, Typescript, HTML, CSS
-* Tier 2 (Webserver): Next.js, Postman (für Tests)
-* Tier 3 (Application Server): Next.js, Typescript
+* Tier 1 (Presentation): React, JS, HTML & CSS
+* Tier 2 (Webserver): Next.js
+* Tier 3 (Application Server): Next.js, Prisma
 * Tier 4 (Dataserver): SQLite
 
 # 3 Datenbank
 
 ✍️ Wie steuern Sie Ihre Datenbank an? Wie ist das Interface aufgebaut? 
 
-Da Next.js ein FullStack Framework ist, werde ich alles nach der Dokumentation und Richtline von Next.js.
+API-Routen von Next.js ermöglichen es, Seiten zu verwalten. Mit React kann man darauf wie bei einer REST-API zugreifen. Der Next.js-Server sammelt die Daten auf der Website und gibt sie letztendlich an den Client weiter.
+
+Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispiel" auf. Die Funktion auf diesem Endpunkt verarbeitet die Anfrage und gibt die Daten an die Datenbank weiter. Anschlieend gibt die Datenbank die Daten an den Next.js-Server zurück, der eine Seite mit den Daten generiert. Schliesslich sendet der Server die generierte Seite an den Client, der sie anzeigen kann.
 
 # 4.1 User Stories
 
 | Nr | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| A    | Muss                | Funktional     |  |
-| B  | Muss                | Funktional     |  |
-| C  | Muss                | Funktional     | |
-| D  | Muss                | Qualität     |  |
-| E  | Kann                | Rand     | |
+| 1  | M | Funktional | Als Administrator möchte ich mich durch Eingabe meines Benutzernamens und Passworts authentifizieren können, um Zugriff auf die geschützten     Funktionen der Anwendung zu erhalten. | 
+| 2  | M | Funktional | Als Administrator möchte ich in der Lage sein, Phrasen und Rätselwörter anzulegen, zu ändern und zu löschen, damit ich die Spielfragen verwalten kann. |
+| 3  | M | Funktional | Als Administrator möchte ich Kategorien erstellen und jedem Wort oder jeder Frage eine Kategorie zuordnen können, damit die Fragen organisiert sind und leichter gefunden werden können. |
+| 4  | M | Funktional | Als Administrator möchte ich die Möglichkeit haben, einzelne Einträge in der Highscore-Liste zu löschen, um die Liste zu verwalten. |
+| 5  | M | Funktional | Als Kandidat möchte ich meinen Namen eingeben können, damit er auf der Highscore-Liste erscheint und ich mein Ergebnis mit anderen vergleichen kann. |
+| 6  | M | Funktional | Als Kandidat möchte ich zu jeder Zeit meinen Kontostand sehen können, um zu wissen, wie viel Geld ich bisher gewonnen habe. |
+| 7  | M | Funktional | Als Kandidat möchte ich zu jeder Zeit meine Lebenspunkte sehen können, damit ich weiß, wie viele falsche Antworten ich noch geben kann, bevor das Spiel endet. |
+| 8  | M | Funktional | Wenn der Kandidat eine Antwort gibt, möchte ich darüber informiert werden, ob sie richtig oder falsch ist, damit ich sein Wissen verbessern und sich für die nächsten Fragen vorbereiten kann. |
+| 9  | M | Funktional | Die Highscore-Liste soll nach Rang sortiert werden, basierend auf der Höhe des Geldbetrags, damit der Kandidat seine Ergebnis im Vergleich zu anderen Spielern sehen kann. |
+| 10  | M | Funktional | Als Kandidat möchte ich sicherstellen, dass kein Rätselwort oder keine Phrase mehr als einmal im Spiel vorkommt, damit das Spiel fair bleibt. |
+| 11  | M | Funktional | Als Kandidat möchte ich jederzeit entscheiden können, ob ich weiterspielen oder aufhören und mein Ergebnis in die Highscore-Liste übernehmen möchte, um mich mit anderen Spielern messen zu können |
+| 12 | M | Funktional |Als Kandidat möchte ich, das meine Spielrunden gezählt werden, um zu sehen wie viele Runden ich effektiv gebraucht habe um meine Geldsumme zu erspielen. |
+| 12 | M | Als Kandidat möchte ich, dass das Spiel genügend Wörter hat, um ein spassiges Spielerlebnis zu haben. |
+
 
 # 4.2 Testfälle
 
