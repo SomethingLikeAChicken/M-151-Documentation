@@ -42,11 +42,20 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 | Nr | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| A    | Muss                | Funktional     |  |
-| B  | Muss                | Funktional     |  |
-| C  | Muss                | Funktional     | |
-| D  | Muss                | Qualität     |  |
-| E  | Kann                | Rand     | |
+| 1  | M | Funktional | Als Administrator möchte ich mich durch Eingabe meines Benutzernamens und Passworts authentifizieren können, um Zugriff auf die geschützten     Funktionen der Anwendung zu erhalten. | 
+| 2  | M | Funktional | Als Administrator möchte ich in der Lage sein, Phrasen und Rätselwörter anzulegen, zu ändern und zu löschen, damit ich die Spielfragen verwalten kann. |
+| 3  | M | Funktional | Als Administrator möchte ich Kategorien erstellen und jedem Wort oder jeder Frage eine Kategorie zuordnen können, damit die Fragen organisiert sind und leichter gefunden werden können. |
+| 4  | M | Funktional | Als Administrator möchte ich die Möglichkeit haben, einzelne Einträge in der Highscore-Liste zu löschen, um die Liste zu verwalten. |
+| 5  | M | Funktional | Als Kandidat möchte ich meinen Namen eingeben können, damit er auf der Highscore-Liste erscheint und ich mein Ergebnis mit anderen vergleichen kann. |
+| 6  | M | Funktional | Als Kandidat möchte ich zu jeder Zeit meinen Kontostand sehen können, um zu wissen, wie viel Geld ich bisher gewonnen habe. |
+| 7  | M | Funktional | Als Kandidat möchte ich zu jeder Zeit meine Lebenspunkte sehen können, damit ich weiß, wie viele falsche Antworten ich noch geben kann, bevor das Spiel endet. |
+| 8  | M | Funktional | Wenn der Kandidat eine Antwort gibt, möchte ich darüber informiert werden, ob sie richtig oder falsch ist, damit ich sein Wissen verbessern und sich für die nächsten Fragen vorbereiten kann. |
+| 9  | M | Funktional | Die Highscore-Liste soll nach Rang sortiert werden, basierend auf der Höhe des Geldbetrags, damit der Kandidat seine Ergebnis im Vergleich zu anderen Spielern sehen kann. |
+| 10  | M | Funktional | Als Kandidat möchte ich sicherstellen, dass kein Rätselwort oder keine Phrase mehr als einmal im Spiel vorkommt, damit das Spiel fair bleibt. |
+| 11  | M | Funktional | Als Kandidat möchte ich jederzeit entscheiden können, ob ich weiterspielen oder aufhören und mein Ergebnis in die Highscore-Liste übernehmen möchte, um mich mit anderen Spielern messen zu können |
+| 12 | M | Funktional |Als Kandidat möchte ich, das meine Spielrunden gezählt werden, um zu sehen wie viele Runden ich effektiv gebraucht habe um meine Geldsumme zu erspielen. |
+| 12 | M | Als Kandidat möchte ich, dass das Spiel genügend Wörter hat, um ein spassiges Spielerlebnis zu haben. |
+
 
 # 4.2 Testfälle
 
