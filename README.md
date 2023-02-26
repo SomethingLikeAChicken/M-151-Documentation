@@ -4,37 +4,39 @@ Holzherr Janic
 
 | Datum | Version | Zusammenfassung                                              |
 | ----- | ------- | ------------------------------------------------------------ |
-|       | 0.0.1   |                                                              |
-|       | 0.0.2   |                                                              |
-|       | 0.0.3   |                                                              |
-|       | 0.0.4   |                                                              |
-|       | 0.0.5   |                                                              |
-|       | 0.0.6   |                                                              |
-|       | 1.0.0   |                                                              |
+| 6.02.2023 | 0.0.1   | Gameprinzip + Logik implementiert. |
+| 13.02.2023 | 0.0.2 | Datenbank (SQLite) eingebunden mit Prisma |
+| 13.02.2023 | 0.0.3   | Login mit Nextauth versucht einzurichten (nicht funktioniert) |
+| 20.02.2023 | 0.0.4   | Backend für das Spiel entwickelt und eingebunden |
+| 26.02.2023 | 0.0.5   | Highscoreliste implementiert, ranglistensystem entwickelt | 
+| 26.02.2023 | 0.0.6   | Login nocheinmal versucht zu implementieren (gleicher fehler wie beim letzten versuch) |
+| 27.02.2023 | 1.0.0   | Bugs behoben |
 
 # 0 Ihr Projekt
 
-Casino Spiel
+In meinem Projekt habe ich mit Next.js das Gameprinzip der Fernsehsendung "Glücksrad" implementiert. Dies dient als LB für das Modul 151
 
 # 1 Analyse
 
-* Tier 1 (Presentation): Glückspiel anzeigen
+* Tier 1 (Presentation): Wörterrate Spiel und Glücksrad anzeigen
 * Tier 2 (Webserver): Eingaben validieren
-* Tier 3 (Application Server): Glückspiel berechnen
-* Tier 4 (Dataserver): Benutezrdaten speichern
+* Tier 3 (Application Server): Glücksspiel ausgaben generieren
+* Tier 4 (Dataserver): Ranglistensystem, Highscoreliste und Namen speichern
 
 # 2 Technologie
 
-* Tier 1 (Presentation): Next.js, Typescript, HTML, CSS
-* Tier 2 (Webserver): Next.js, Postman (für Tests)
-* Tier 3 (Application Server): Next.js, Typescript
+* Tier 1 (Presentation): React, JS, HTML & CSS
+* Tier 2 (Webserver): Next.js
+* Tier 3 (Application Server): Next.js, Prisma
 * Tier 4 (Dataserver): SQLite
 
 # 3 Datenbank
 
 ✍️ Wie steuern Sie Ihre Datenbank an? Wie ist das Interface aufgebaut? 
 
-Da Next.js ein FullStack Framework ist, werde ich alles nach der Dokumentation und Richtline von Next.js.
+API-Routen von Next.js ermöglichen es, Seiten zu verwalten. Mit React kann man darauf wie bei einer REST-API zugreifen. Der Next.js-Server sammelt die Daten auf der Website und gibt sie letztendlich an den Client weiter.
+
+Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispiel" auf. Die Funktion auf diesem Endpunkt verarbeitet die Anfrage und gibt die Daten an die Datenbank weiter. Anschlieend gibt die Datenbank die Daten an den Next.js-Server zurück, der eine Seite mit den Daten generiert. Schliesslich sendet der Server die generierte Seite an den Client, der sie anzeigen kann.
 
 # 4.1 User Stories
 
