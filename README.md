@@ -49,12 +49,12 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 | 5  | M | Funktional | Als Kandidat möchte ich meinen Namen eingeben können, damit er auf der Highscore-Liste erscheint und ich mein Ergebnis mit anderen vergleichen kann. |
 | 6  | M | Funktional | Als Kandidat möchte ich zu jeder Zeit meinen Kontostand sehen können, um zu wissen, wie viel Geld ich bisher gewonnen habe. |
 | 7  | M | Funktional | Als Kandidat möchte ich zu jeder Zeit meine Lebenspunkte sehen können, damit ich weiß, wie viele falsche Antworten ich noch geben kann, bevor das Spiel endet. |
-| 8  | M | Funktional | Wenn der Kandidat eine Antwort gibt, möchte ich darüber informiert werden, ob sie richtig oder falsch ist, damit ich sein Wissen verbessern und sich für die nächsten Fragen vorbereiten kann. |
+| 8  | M | Funktional | Als Kandidat möchte ich, wenn ich einen Buchstaben rate ein feedback bekommen ob dieser im wort beinhaltet ist oder nicht, um zu wissen ob ich es erraten habe. |
 | 9  | M | Funktional | Die Highscore-Liste soll nach Rang sortiert werden, basierend auf der Höhe des Geldbetrags, damit der Kandidat seine Ergebnis im Vergleich zu anderen Spielern sehen kann. |
 | 10  | M | Funktional | Als Kandidat möchte ich sicherstellen, dass kein Rätselwort oder keine Phrase mehr als einmal im Spiel vorkommt, damit das Spiel fair bleibt. |
 | 11  | M | Funktional | Als Kandidat möchte ich jederzeit entscheiden können, ob ich weiterspielen oder aufhören und mein Ergebnis in die Highscore-Liste übernehmen möchte, um mich mit anderen Spielern messen zu können |
 | 12 | M | Funktional |Als Kandidat möchte ich, das meine Spielrunden gezählt werden, um zu sehen wie viele Runden ich effektiv gebraucht habe um meine Geldsumme zu erspielen. |
-| 13 | M | Als Kandidat möchte ich, dass das Spiel genügend Wörter hat, um ein spassiges Spielerlebnis zu haben. |
+| 13 | M | Rand |Als Kandidat möchte ich, dass das Spiel genügend Wörter hat, um ein spassiges Spielerlebnis zu haben. |
 
 
 # 4.2 Testfälle
@@ -77,7 +77,6 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 # 5 Prototyp
 
-✍️ Erstellen Sie Prototypen für das GUI (Admin-Interface und Quiz-Seite).
 ![mock game](https://github.com/SomethingLikeAChicken/M-151-Documentation/blob/main/src/img/mockgame.png)
 ![mock admin interface](https://github.com/SomethingLikeAChicken/M-151-Documentation/blob/main/src/img/mockadmininterface.png)
 
@@ -87,14 +86,25 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 | User Story | Datum | Beschreibung |
 | ---------- | ----- | ------------ |
-| ...        |       |              |
+| 1        | 13.02.2023 | nicht funktioniert.|
 
 # 7 Projektdokumentation
 
 | US-№ | Erledigt? | Entsprechende Code-Dateien oder Erklärung |
 | ---- | --------- | ----------------------------------------- |
-| 1    | ja / nein |                                           |
-| ...  |           |                                           |
+| 1    | nein | der verusch ist bei /src/pages/api/auth/[...nextauth.js] |
+| 2  | teilweise | siehe src/pages/AdminInterfacePage.js und src/pages/api/AdminInterface.js|
+| 3| nein | |
+| 4 | nein |  |
+| 5 | ja | siehe src/pages/index.js/z.157 | 
+| 6 | ja | siehe src/pages/index.js/z.191 |
+| 7 | ja | siehe src/pages/index.js/z.186 |
+| 8 | ja | siehe src/pages/index.js/z.56 & z.63|
+| 9 | ja | siehe src/pages/components/Highscore.js & src/pages/HighScorePage.js & src/pages/api/score.js|
+| 10 |ja | siehe src/pages/index.js/z.102-130|
+| 11 |ja | siehe src/pages/index.js/z.199 & src/pages/components/PayoutBtn.js & src/pages/index.js/z.116-131 & src/pages/api/score.js|
+| 12 | ja | siehe src/pages/index.js/z.190|
+| 13 | ja | siehe prisma/seed.js|
 
 # 8 Testprotokoll
 
