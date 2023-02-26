@@ -86,3 +86,13 @@ body{
     color: #FFF;
     background-color: #FFF;
 }
+.name-input{
+    color: #FFF;
+}
+.title{
+    color: #FFF;
+    margin-top: 20px;
+}
+table{
+    width: 100%;
+}

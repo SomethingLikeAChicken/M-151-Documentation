@@ -8,15 +8,28 @@ function HighScore({ scores }) {
   }, [scores]);
 
   return (
-    <div>
-      <h1>High Scores</h1>
-      <ul className='scores'>
-        {highScores.map((score) => (
-          <li key={score.money}>
-            {score.id} - {score.name} - {score.money} - {score.roundsPlayed}
-          </li>
-        ))}
-      </ul>
+    <div className='wrapper'>
+      <h1 className="title">High Scores</h1>
+      <table className='scores'>
+        <thead>
+          <tr>
+            <th className='rank'>Rank</th>
+            <th className='rank'>Name</th>
+            <th className='rank'>Money</th>
+            <th className='rank'>Rounds Played</th>
+          </tr>
+        </thead>
+        <tbody>
+          {highScores.map((score, index) => (
+            <tr key={score.id}>
+              <td>{index + 1}</td>
+              <td>{score.name}</td>
+              <td>{score.money}</td>
+              <td>{score.roundsPlayed}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

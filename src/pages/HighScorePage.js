@@ -5,15 +5,16 @@ import NavigationMenu from "./components/NavigationMenu";
 function HighScorePage() {
   const [highScores, setHighScores] = useState([]);
 
-  useEffect(() => {
-    // Fetch high scores from API or JSON file
-    const scores = [
-      { id: 1, name: "Elia", money: 100, roundsPlayed: 10 },
-      { id: 2, name: "Janic", money: 110, roundsPlayed: 5 },
-    ];
-    setHighScores(scores);
-  }, []);
 
+  useEffect(() => {
+    //Get Data from db
+    async function fetchScores() {
+      const res = await fetch("/api/score");
+      const scoresData = await res.json();
+      setHighScores(scoresData);
+    }
+    fetchScores();
+  });
   return (
     <div>
       <Head>
