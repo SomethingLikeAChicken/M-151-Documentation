@@ -54,26 +54,32 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 | 10  | M | Funktional | Als Kandidat möchte ich sicherstellen, dass kein Rätselwort oder keine Phrase mehr als einmal im Spiel vorkommt, damit das Spiel fair bleibt. |
 | 11  | M | Funktional | Als Kandidat möchte ich jederzeit entscheiden können, ob ich weiterspielen oder aufhören und mein Ergebnis in die Highscore-Liste übernehmen möchte, um mich mit anderen Spielern messen zu können |
 | 12 | M | Funktional |Als Kandidat möchte ich, das meine Spielrunden gezählt werden, um zu sehen wie viele Runden ich effektiv gebraucht habe um meine Geldsumme zu erspielen. |
-| 12 | M | Als Kandidat möchte ich, dass das Spiel genügend Wörter hat, um ein spassiges Spielerlebnis zu haben. |
+| 13 | M | Als Kandidat möchte ich, dass das Spiel genügend Wörter hat, um ein spassiges Spielerlebnis zu haben. |
 
 
 # 4.2 Testfälle
 
 | TC-Nr | Vorbereitung | Eingabe | Erwartete Ausgabe |
 | ---- | ------------ | ------- | ----------------- |
-| A.1  | Der Verkäufer befindet sich auf der Verkaufsseite.             | Unter Kommunikationskanäle "Tel. 076 600 60 60" eingeben. | Auf der Artikelanzeige wird nun die Telefonnummer angezeigt.                   |
-| A.2  | Der Verkäufer befindet sich auf der Verkaufsseite.              | Unter Kommunikationskanäle "Facebook: https://www.facebook.com/zuck/" eingeben.         | Auf der Artikelanzeige wird nun der Link zu Mark Zuckerbergs Facebookprofil angezeigt.                   |
-| B.1  | Der Verkäufer befindet sich auf der Verkaufsseite.              | Unter Foto ein Bild von einer Katze einfügen. | Auf der Artikelanzeige wird nun das Bild der Katze angezeigt.                   |
-| B.2  | Der Verkäufer befindet sich auf der Verkaufsseite.              | Unter Beschreibung "Diese Katze steht nicht zum Verkauf. Es wird bloss getestet" eingeben. | Auf der Artikelanzeige wird nun die Produkbeschreibung angezeigt.                |
-| C.1  | Der Käufer befindet sich auf der Artikelanzeige der Katze            | Unter Bieten einen Betrag eingeben, der tiefer als das aktuelle Angebot ist. | Es steht in rot "Ihr Angebot muss höher als das Aktuelle sein."        |
-| C.2  | Der Käufer befindet sich auf der Artikelanzeige der Katze            | Unter Bieten einen Betrag eingeben, der höher als das aktuelle Angebot ist. | Der eingetragene Betrag steht nun als aktuellen Angebot unter dem Artikel.        |
-| D.1  | Der Tester hat seinen Lieblingsbrowser offen und das Frontend, Backend und die Datenbank lokal gestartet. | Die URL im Browser für die Plattform eingeben. | Die Ladezeit beträgt kürzer als zwei Sekunden, sofern das Frontend schon bereitgestellt wurde.        |
-| E.1  | Der Tester Hat die Website auf seinem Rechner offen. | Alle Knöpfe und Texte überprüfen, ob sie zugänglich sind.  | Alle Knöpfe führen die erwartete Aktionen aus, alle Texte aus dem HTML Quelltext werden im richtigen Layout angezeigt. |
-| E.1  | Der Tester Hat die Website auf seinem Rechner offen und stellt bei den Entwicklertools ein, dass die Seitengrössen so, wie auf dem iPhone sind. | Alle Knöpfe und Texte überprüfen, ob sie zugänglich sind.  | Alle Knöpfe führen die erwartete Aktionen aus, alle Texte aus dem HTML Quelltext werden im richtigen Layout angezeigt. |
+| 1.1  | Die Anwendung ist gestartet, der User ist nicht angemeldet| Der User klickt auf Anmelden| Der User wird weitergeleitet auf die Offizielle Anmeldeseite von Github und kann sich dort anmelden. |
+| 1.2  | Die Anwendung ist gestartet, der User ist eingeloggt | Der User navigiert zu Admin Interface| Der Admin kann nun Rätselwörter anlegen |
+| 1.3  | Die Anwendung ist gestartet, der User ist eingeloggt | Der User navigiert zu Admin Interface| Der Admin kann nun Rätselwörter löschen |
+| 1.4  | Die Anwendung ist gestartet, der User ist eingeloggt | Der User navigiert zu Admin Interface| Der Admin kann nun Rätselwörter bearbeiten |
+| 1.5  | Die Anwendung ist gestartet, der User ist eingeloggt | Der User navigiert zu Admin Interface | Der Admin kann nun Einträge aus der Highscore Liste löschen |
+| 1.6  | Die Anwendung ist gestartet, der User ist eingeloggt | Der User navigiert zu Home | Der Kontostand ist immer ersichtlich, wie auch die Herzen |
+| 1.7  |Die Anwendung ist gestartet, der User ist eingeloggt|Der User navigiert zu Home, dann gibt er sich einwenig geld durch Spin and Win, dann klickt er auf New Game und gibt einen falschen buchstaben ein|Es wird ihm ein Herz abgezogen und es wird durch einen Alert signalisiert.|
+| 1.8  |Die Anwendung ist gestartet, der User ist eingeloggt| Der User navigiert zu Highscores|Dem User werden nun die Highscores mit den Daten angezeigt.|
+| 1.9  |Die Anwendung ist gestartet, der User ist eingeloggt|Der User navigiert zu Home und klickt new Game und erräht das Wort|Der Spieler bekommt einen Geldbetrag und es wird ihm mit einem Alert signalisiert das er gewonnen hat.|
+| 1.10 | Die Anwendung ist gestartet, der User ist eingeloggt | Der User navigiert zu Home, klickt new Game, errät das Wort und klickt erneut new Game| ein neues Wort wird generiert|
+| 1.11 | Die Anwendung ist gestartet, der User ist eingeloggt | Der User navigiert zu Home, klickt new Game, errät das Wort und klickt pay out| Sein Name, Geldbetrag und die Anzahl Spiele gespielt wird in die Highscore liste eingetragen.|
+| 1.12 |Die Anwendung ist gestartet, der User ist eingeloggt | Der user navigiert zu Home, klickt auf Spin and Win| Entweder bekommt er einen zufälligen Geldbetrag um sein kontostand zu verbessern, oder er verliert |
+| 1.13 |Die Anwendung ist gestartet, der User ist eingeloggt| Der user navigiert zu Home, und gibt seinen Namen oben im Textinput ein.| sobald der User payout klickt sieht man den gerade eingegebenen Namen in der Highscore liste |
 
 # 5 Prototyp
 
 ✍️ Erstellen Sie Prototypen für das GUI (Admin-Interface und Quiz-Seite).
+![mock game](https://github.com/SomethingLikeAChicken/M-151-Documentation/blob/main/src/img/mockgame.png)
+![mock admin interface](https://github.com/SomethingLikeAChicken/M-151-Documentation/blob/main/src/img/mockadmininterface.png)
 
 # 6 Implementation
 
