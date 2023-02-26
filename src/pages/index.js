@@ -24,6 +24,7 @@ export default function Home() {
   const [scores, setScores] = useState([]);
   const [saving, setSaving] = useState(false);
   const [name, setName] = useState("");
+  
 
   // Creating a reference to the inputs div
   const inputsRef = useRef(null);
@@ -45,6 +46,7 @@ export default function Home() {
             for (let i = 0; i < wordToGuess.length; i++) {
               if (wordToGuess[i] === key) {
                 inputsRef.current.querySelectorAll("input")[i].value = key;
+                alert("You've guessed CORRECTLY!!!!");
               }
             }
             guessedLetters.add(key);
@@ -58,7 +60,7 @@ export default function Home() {
             }
           } else {
             typingInput.value = "";
-            console.log("wrong letter!");
+            alert("You've guessed WRONG!!!!");
             setHeart((prevHeart) => prevHeart - 1);
             setWrongLetters((prevWrongLetters) => [...prevWrongLetters, key]);
             setTotalMoney(
@@ -80,7 +82,11 @@ export default function Home() {
   // Effect that listens for changes to the heart state variable
   useEffect(() => {
     if (heart === 0) {
-      console.log("game over!");
+      alert("YOU LOST!!!!!! Spin again to get some money and guess anotherone");
+      setTotalMoney(0);
+      setHeart(3);
+      randomWord();
+      setWrongLetters([]);
     }
   }, [heart]);
   useEffect(() => {

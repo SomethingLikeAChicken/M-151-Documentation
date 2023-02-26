@@ -14,6 +14,11 @@ const NavigationMenu = () => {
             <a className="link">High Scores</a>
           </Link>
         </li>
+        <li>
+        <Link href="/AdminInterfacePage" passHref legacyBehavior>
+            <a className="link">Admin Interface</a>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
