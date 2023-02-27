@@ -1,3 +1,9 @@
+# Readme
+## Vorbereitungen
+Führen sie zuerst npm install aus sobald Sie das Verzeichnis heruntergeladen haben. 
+Um die Applikation zu starten schreiben Sie npm run dev in das Terminal. 
+Um das GUI der Datenbank aufzurufen, schreiben Sie npx prisma studio.
+Wenn Sie das Projekt herunterladen und die Datenbank keine Einträge hätte, gehen Sie im Terminal zum ordner /prisma und führen Sie die Seed.js Datei aus. Dann haben Sie 30 Einträge um zu testen.
 # Projekt-Dokumentation
 
 Holzherr Janic
@@ -124,10 +130,21 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 | TC-№ | Datum | Resultat | Tester |
 | ---- | ----- | -------- | ------ |
-| 1.1  |       |          |        |
-| ...  |       |          |        |
+| 1.1  | 27.02 | NOK | Janic Holzherr|
+| 1.2  | 27.02 | OK | Janic Holzherr |
+| 1.3 | 27.02 | NOK | Janic Holzherr |
+| 1.4 | 27.02 | NOK | Janic Holzherr |
+| 1.5 | 27.02 | NOK | Janic Holzherr |
+| 1.6 | 27.02 | OK | Janic Holzherr |
+| 1.7 | 27.02 | OK | Janic Holzherr |
+| 1.8 | 27.02 | OK | Janic Holzherr |
+| 1.9 | 27.02 | OK | Janic Holzherr |
+| 1.10 | 27.02 | OK | Janic Holzherr |
+| 1.11 | 27.02 | OK | Janic Holzherr |
+| 1.12 | 27.02 | OK | Janic Holzherr |
+| 1.13 | 27.02 | OK | Janic Holzherr |
 
-✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
+Der momentane Stand der Applikation ist nicht bereit um veröffentlicht zu werden, da die Login Funktion nicht implementiert wurde bzw. mit Fehler. Das Spielprinzip mit der HighscoreList ist jedoch gegeben und funktioniert soweit. Das Admininterface müsste noch überarbeitet werden, dann wäre die Applikation bereit um veröffentlicht zu werden. Das nächstemal würde ich mich mehr darauf fokussieren, das ich das Login zuerst mache, bevor ich mit der Logik anfangen würde, da dies ein wichtiger Bestandteil dieser Applikation wäre.
 
 # 9 `README.md`
 
