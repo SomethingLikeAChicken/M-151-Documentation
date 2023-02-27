@@ -86,13 +86,24 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 | User Story | Datum | Beschreibung |
 | ---------- | ----- | ------------ |
-| 1        | 13.02.2023 | nicht funktioniert.|
-
+| 1        | 13.02.2023 | implemenitert (mit fehlern) |
+| 2 | 13.02.2023 | teilweise implementiert (mit fehlern) |
+| 3 | 13.02.2023 | nicht implementiert |
+| 4 | 13.02.2023 | nicht implementiert |
+| 5 | 6.02.2023 | implementiert |
+| 6 | 6.02.2023| implementiert |
+| 7 | 6.02.2023 | implementiert |
+| 8 | 20.02.2023 | implementiert |
+| 9 |  26.02.2023 | implementiert |
+| 10 | 20.02.2023 | implementiert |
+| 11 | 26.02.2023 | implementiert |
+| 12 | 26.02.2023 | implementiert |
+| 13 | 20.02.2023 | implementiert |
 # 7 Projektdokumentation
 
 | US-№ | Erledigt? | Entsprechende Code-Dateien oder Erklärung |
 | ---- | --------- | ----------------------------------------- |
-| 1    | nein | der verusch ist bei /src/pages/api/auth/[...nextauth.js] |
+| 1    | nein | der versuch ist bei /src/pages/api/auth/[...nextauth.js] |
 | 2  | teilweise | siehe src/pages/AdminInterfacePage.js und src/pages/api/AdminInterface.js|
 | 3| nein | |
 | 4 | nein |  |

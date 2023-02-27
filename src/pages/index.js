@@ -101,6 +101,7 @@ export default function Home() {
   // RandomWord function, that checks if a word comes twice in a row
   function randomWord() {
     setHeart(3);
+    setWrongLetters([]);
     let newWord;
     do {
       newWord = words[Math.floor(Math.random() * words.length)];
