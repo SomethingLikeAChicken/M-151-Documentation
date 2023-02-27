@@ -126,6 +126,7 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 # 8 Testprotokoll
 
 ![test video](https://github.com/SomethingLikeAChicken/M-151-Documentation/blob/main/src/img/testvideo.mp4)
+Fals der Link nicht funktioniert, wäre das Video auch im Projekt unter src/img/testvideo.mp4 verfügbar.
 
 | TC-№ | Datum | Resultat | Tester |
 | ---- | ----- | -------- | ------ |
