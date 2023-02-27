@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import NavigationMenu from "./components/NavigationMenu";
 
 const AdminInterfacePage = () => {
   const [words, setWords] = useState([]);
@@ -57,6 +58,7 @@ const AdminInterfacePage = () => {
 
   return (
     <>
+    <NavigationMenu></NavigationMenu>
       <div class="wrapper">
         <h1>Admin Interface</h1>
         <table>
