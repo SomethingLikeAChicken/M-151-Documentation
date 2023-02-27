@@ -3,7 +3,9 @@
 Führen sie zuerst npm install aus sobald Sie das Verzeichnis heruntergeladen haben. 
 Um die Applikation zu starten schreiben Sie npm run dev in das Terminal. 
 Um das GUI der Datenbank aufzurufen, schreiben Sie npx prisma studio.
-Wenn Sie das Projekt herunterladen und die Datenbank keine Einträge hätte, gehen Sie im Terminal zum ordner /prisma und führen Sie die Seed.js Datei aus. Dann haben Sie 30 Einträge um zu testen.
+Wenn Sie das Projekt herunterladen und die Datenbank keine Einträge hätte, gehen Sie im Terminal zum ordner /prisma und führen Sie die Seed.js Datei aus. Dann haben Sie 30 Einträge um zu testen. Da ich SQLite verwende als Datenbank, ist es nicht nötig extra SQL Statement auszuführen oder ähnliches.
+## Funktionen
+Schauen Sie sich gerne das Test Video unter dem 8. Punkt in der Projekt-Doku an, dort sieht man welche Funktionen funktionieren und welche nicht und wie man die Applikation grundsätzlich verwendet.
 # Projekt-Dokumentation
 
 Holzherr Janic
