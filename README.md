@@ -40,7 +40,6 @@ In meinem Projekt habe ich mit Next.js das Gameprinzip der Fernsehsendung "Glüc
 
 # 3 Datenbank
 
-✍️ Wie steuern Sie Ihre Datenbank an? Wie ist das Interface aufgebaut? 
 
 API-Routen von Next.js ermöglichen es, Seiten zu verwalten. Mit React kann man darauf wie bei einer REST-API zugreifen. Der Next.js-Server sammelt die Daten auf der Website und gibt sie letztendlich an den Client weiter.
 
@@ -90,7 +89,6 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 # 6 Implementation
 
-✍️ Halten Sie fest, wann Sie welche User Story bearbeitet haben
 
 | User Story | Datum | Beschreibung |
 | ---------- | ----- | ------------ |
@@ -127,7 +125,6 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 # 8 Testprotokoll
 
-✍️ Fügen Sie hier den Link zu dem Video ein, welches den Testdurchlauf dokumentiert.
 ![test video](https://github.com/SomethingLikeAChicken/M-151-Documentation/blob/main/src/img/testvideo.mp4)
 
 | TC-№ | Datum | Resultat | Tester |
@@ -148,12 +145,3 @@ Wenn ein Client die Website aufruft, ruft das Frontend den Endpunkt "api/beispie
 
 Der momentane Stand der Applikation ist nicht bereit um veröffentlicht zu werden, da die Login Funktion nicht implementiert wurde bzw. mit Fehler. Das Spielprinzip mit der HighscoreList ist jedoch gegeben und funktioniert soweit. Das Admininterface müsste noch überarbeitet werden, dann wäre die Applikation bereit um veröffentlicht zu werden. Das nächstemal würde ich mich mehr darauf fokussieren, das ich das Login zuerst mache, bevor ich mit der Logik anfangen würde, da dies ein wichtiger Bestandteil dieser Applikation wäre.
 
-# 9 `README.md`
-
-✍️ Beschreiben Sie ausführlich in einer README.md, wie Ihre Applikation gestartet und ausgeführt wird. Legen Sie eine geeignete Möglichkeit (Skript, Export, …) bei, Ihre Datenbank wiederherzustellen.
-
-# 10 Allgemeines
-
-- [ ] Ich habe die Rechtschreibung überprüft
-- [ ] Ich habe überprüft, dass die Nummerierung von Testfällen und User Stories übereinstimmen
-- [ ] Ich habe alle mit ✍️ markierten Teile ersetzt
